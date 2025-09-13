@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: scroll; /* Enable horizontal scroll */
+  scroll-snap-type: x mandatory; /* Snap on the X-axis */
+  height: 100vh; /* Full viewport height */
+}
+
+/* This container holds the sections in a flex row */
+.scroller-container {
+  display: flex;
+  flex-direction: row; /* Line up sections side-by-side */
+  width: 400vw; /* Must be 100% times the number of sections (4 sections = 400%) */
+}
+
+/* Each section should be the size of the viewport */
+.section {
+  height: 100vh;
+  width: 100vw; /* Each section is 100% of the viewport width */
+  flex-shrink: 0; /* CRUCIAL: Prevents sections from squishing to fit */
+  scroll-snap-align: start; /* Snap to the start of each section */
+  
+  /* Style your content inside each section */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+}
+
+/* Add your custom backgrounds here! */
+#home { background-color: brown; }
+#about { background: linear-gradient(to right, #2c3e50, #4ca1af); }
+#projects { background-color: #34495e; }
+#contact { background-color: #16a085; }
